@@ -6,12 +6,12 @@ export default function Etc() {
       </div>
 
       <div className="space-y-12">
-        <div className="flex flex-col lg:flex-row gap-6 dark:border-gray-700">
+        <div className="flex flex-col lg:flex-row gap-2 lg:gap-6 dark:border-gray-700 pt-4">
           <div className="lg:w-48 flex-shrink-0">
             <p className="text-lg font-medium text-gray-600 dark:text-gray-400">2023.12</p>
           </div>
           <div className="flex-1">
-            <div className="flex flex-wrap items-center gap-2 mb-4">
+            <div className="flex flex-wrap items-center gap-2 mb-2">
               <h3 className="text-xl font-bold dark:text-white">SQLD 자격증</h3>
             </div>
             <div className="mb-6">
@@ -22,7 +22,6 @@ export default function Etc() {
           </div>
         </div>
       </div>
-
     </section>
   )
 }
