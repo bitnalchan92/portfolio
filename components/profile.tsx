@@ -6,11 +6,11 @@ export default function Profile() {
     <div className="flex flex-col md:flex-row gap-8 items-center md:items-start mb-12">
       <div className="w-64 h-64 relative rounded-md overflow-hidden">
         <Image
-          src="/placeholder.svg?height=256&width=256"
+          src="/profile_img.jpg"
           alt="프로필 이미지"
           width={256}
           height={256}
-          className="object-cover"
+          className="object-fill"
           priority
         />
       </div>
