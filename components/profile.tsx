@@ -6,7 +6,7 @@ export default function Profile() {
     <div className="flex flex-col md:flex-row gap-8 items-center md:items-start mb-12">
       <div className="w-64 h-64 relative rounded-md overflow-hidden">
         <Image
-          src="/profile_img.jpg"
+          src="/public/profile_img.JPG"
           alt="프로필 이미지"
           width={256}
           height={256}
