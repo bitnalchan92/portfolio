@@ -80,7 +80,7 @@ export default function Experience() {
 
             <div className="mb-6 pt-8">
               <div className="flex items-center gap-4 mb-4">
-                <p className="text-gray-500 dark:text-gray-400">2023.02 ~ 2023.06</p>
+                <p className="text-gray-500 dark:text-gray-400">2022.02 ~ 2023.01</p>
                 <p className="font-medium text-gray-700 dark:text-gray-300 italic">플리드 / Co-founder, Backend
                   Developer</p>
               </div>
