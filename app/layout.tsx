@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
   title: "김찬 | 백엔드 개발자 포트폴리오",
   description: "Spring Boot, Docker, Next.js 등 웹 기술을 활용한 백엔드 개발자 김찬의 포트폴리오입니다.",
+  icons: {
+    icon: "/favicon-32x32.png",
+  },
   generator: "Next.js",
   keywords: [
     "백엔드 개발자",
