@@ -8,6 +8,24 @@ export default function Etc() {
       <div className="space-y-12">
         <div className="flex flex-col lg:flex-row gap-2 lg:gap-6 dark:border-gray-700 pt-4">
           <div className="lg:w-48 flex-shrink-0">
+            <p className="text-lg font-medium text-gray-600 dark:text-gray-400">2025.9</p>
+          </div>
+          <div className="flex-1">
+            <div className="flex flex-wrap items-center gap-2 mb-2">
+              <h3 className="text-xl font-bold dark:text-white">정보처리기사</h3>
+            </div>
+            <div className="mb-6">
+              <div className="flex items-center gap-4 mb-4">
+                <p className="font-medium text-gray-700 dark:text-gray-300 italic">한국산업인력공단</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-12">
+        <div className="flex flex-col lg:flex-row gap-2 lg:gap-6 dark:border-gray-700 pt-4">
+          <div className="lg:w-48 flex-shrink-0">
             <p className="text-lg font-medium text-gray-600 dark:text-gray-400">2023.12</p>
           </div>
           <div className="flex-1">
@@ -22,6 +40,8 @@ export default function Etc() {
           </div>
         </div>
       </div>
+
+
     </section>
   )
 }
