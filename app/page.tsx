@@ -8,6 +8,7 @@ import Experience from "@/components/experience";
 import Project from "@/components/project";
 import Education from "@/components/education";
 import Etc from "@/components/etc";
+import BlogPosts from "@/components/blog-posts";
 
 export default function Portfolio() {
   return (
@@ -34,6 +35,9 @@ export default function Portfolio() {
 
       {/* 기타 섹션 */}
       <Etc />
+
+      {/* 블로그 섹션 */}
+      <BlogPosts />
     </div>
   )
 }
