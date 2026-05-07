@@ -12,31 +12,23 @@ import BlogPosts from "@/components/blog-posts";
 
 export default function Portfolio() {
   return (
-    <div className="container mx-auto px-4 py-8 max-w-5xl">
+    <div className="portfolio-shell">
       <ThemeToggle/>
 
-      {/* 프로필 섹션 */}
       <Profile/>
 
-      {/* 소개 섹션 */}
       <Introduce />
 
-      {/* 기술 스택 섹션 */}
       <Skill />
 
-      {/* 경력 섹션 */}
       <Experience />
 
-      {/* 프로젝트 섹션 */}
       <Project />
 
-      {/* 교육 섹션 */}
       <Education />
 
-      {/* 기타 섹션 */}
       <Etc />
 
-      {/* 블로그 섹션 */}
       <BlogPosts />
     </div>
   )

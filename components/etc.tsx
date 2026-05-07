@@ -1,47 +1,36 @@
+const certifications = [
+  {
+    date: "2025.9",
+    title: "정보처리기사",
+    issuer: "한국산업인력공단",
+  },
+  {
+    date: "2023.12",
+    title: "SQLD 자격증",
+    issuer: "한국데이터베이스진흥센터",
+  },
+];
+
 export default function Etc() {
   return (
-    <section>
-      <div className="flex items-center gap-3 mt-16 mb-6">
-        <h2 className="text-2xl font-bold text-blue-500">ETC</h2>
+    <section className="portfolio-section">
+      <div className="section-heading">
+        <h2 className="section-title">Etc</h2>
       </div>
 
-      <div className="space-y-12">
-        <div className="flex flex-col lg:flex-row gap-2 lg:gap-6 dark:border-gray-700 pt-4">
-          <div className="lg:w-48 flex-shrink-0">
-            <p className="text-lg font-medium text-gray-600 dark:text-gray-400">2025.9</p>
-          </div>
-          <div className="flex-1">
-            <div className="flex flex-wrap items-center gap-2 mb-2">
-              <h3 className="text-xl font-bold dark:text-white">정보처리기사</h3>
+      <div className="timeline-list">
+        {certifications.map((certification) => (
+          <article key={certification.title} className="timeline-item">
+            <div>
+              <p className="timeline-date">{certification.date}</p>
             </div>
-            <div className="mb-6">
-              <div className="flex items-center gap-4 mb-4">
-                <p className="font-medium text-gray-700 dark:text-gray-300 italic">한국산업인력공단</p>
-              </div>
+            <div>
+              <h3 className="entry-title mb-2">{certification.title}</h3>
+              <p className="entry-meta">{certification.issuer}</p>
             </div>
-          </div>
-        </div>
+          </article>
+        ))}
       </div>
-
-      <div className="space-y-12">
-        <div className="flex flex-col lg:flex-row gap-2 lg:gap-6 dark:border-gray-700 pt-4">
-          <div className="lg:w-48 flex-shrink-0">
-            <p className="text-lg font-medium text-gray-600 dark:text-gray-400">2023.12</p>
-          </div>
-          <div className="flex-1">
-            <div className="flex flex-wrap items-center gap-2 mb-2">
-              <h3 className="text-xl font-bold dark:text-white">SQLD 자격증</h3>
-            </div>
-            <div className="mb-6">
-              <div className="flex items-center gap-4 mb-4">
-                <p className="font-medium text-gray-700 dark:text-gray-300 italic">한국데이터베이스진흥센터</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
     </section>
-  )
+  );
 }

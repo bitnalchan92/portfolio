@@ -87,17 +87,17 @@ export default function BlogPosts() {
   }, [])
 
   return (
-    <section className="pb-4">
-      <div className="flex items-center justify-between gap-4 mt-16 mb-6">
+    <section className="portfolio-section pb-4">
+      <div className="section-heading justify-between">
         <div className="flex items-center gap-3">
-          <Rss className="w-6 h-6 text-blue-500" />
-          <h2 className="text-2xl font-bold text-blue-500">BLOG</h2>
+          <Rss className="h-4 w-4 text-primary" />
+          <h2 className="section-title">Blog</h2>
         </div>
         <a
           href={BLOG_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400"
+          className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted-foreground hover:text-primary"
         >
           전체 글
           <ExternalLink className="w-4 h-4" />
@@ -109,12 +109,12 @@ export default function BlogPosts() {
           {Array.from({ length: 4 }).map((_, index) => (
             <div
               key={index}
-              className="h-40 rounded-md border border-gray-200 bg-gray-50 animate-pulse dark:border-gray-800 dark:bg-gray-900"
+              className="h-40 animate-pulse rounded-sm border border-border bg-card"
             />
           ))}
         </div>
       ) : error ? (
-        <div className="rounded-md border border-gray-200 p-5 text-sm text-gray-600 dark:border-gray-800 dark:text-gray-400">
+        <div className="rounded-sm border border-border bg-card p-5 text-sm text-muted-foreground">
           {error}
         </div>
       ) : (
@@ -125,25 +125,25 @@ export default function BlogPosts() {
               href={post.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex min-h-40 flex-col rounded-md border border-gray-200 p-5 transition hover:border-blue-300 hover:bg-blue-50/40 dark:border-gray-800 dark:hover:border-blue-500/60 dark:hover:bg-blue-950/20"
+              className="group flex min-h-40 flex-col rounded-sm border border-border bg-card p-5 transition hover:border-primary/40 hover:bg-accent/60"
             >
-              <div className="mb-3 flex flex-wrap items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+              <div className="mb-3 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
                 <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
                 {post.categories.slice(0, 2).map((category) => (
                   <span
                     key={category}
-                    className="rounded-sm bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-300"
+                    className="rounded-sm border border-border bg-background px-2 py-0.5 text-xs font-medium text-foreground/65"
                   >
                     {category}
                   </span>
                 ))}
               </div>
 
-              <h3 className="mb-3 line-clamp-2 text-lg font-bold leading-7 text-gray-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">
+              <h3 className="mb-3 line-clamp-2 text-lg font-bold leading-7 text-foreground group-hover:text-primary">
                 {post.title}
               </h3>
 
-              <p className="line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
+              <p className="line-clamp-3 text-sm leading-6 text-muted-foreground">
                 {post.summary}
               </p>
             </a>

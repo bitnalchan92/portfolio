@@ -1,41 +1,33 @@
 import { useMemo } from "react";
 import dayjs from "dayjs";
-import {Badge} from "@/components/ui/badge";
 
 interface DDayProps {
   baseDate: string; // 'YYYY.MM.DD'
 }
 
 const DDay = ({ baseDate }: DDayProps) => {
-  const date: string = new Date('2025-05-20').toISOString().split("T")[0].replace(/-/g, ". ");
-  const { displayText, colorClass } = useMemo(() => {
+  const { displayText } = useMemo(() => {
     const today = dayjs().startOf('day');
     const target = dayjs(baseDate, 'YYYY.MM.DD').startOf('day');
     const diff = today.diff(target, 'day');
 
     let dDayText = '';
-    let colorClass = '';
 
     if (diff === 0) {
       dDayText = '(D-day)';
-      colorClass = 'text-blue-500';
     } else if (diff > 0) {
       dDayText = `(D+${diff})`;
-      colorClass = 'text-green-500';
     } else {
       dDayText = `(D${diff})`; // diff가 음수 -> D-숫자
-      colorClass = 'text-red-500';
     }
 
     return {
       displayText: `${target.format('YYYY.MM.DD')} ${dDayText}`,
-      colorClass,
     };
   }, [baseDate]);
 
   return (
-    // <p className={`text-lg font-semibold ${colorClass}`}>
-    <p className={`text-sm`}>
+    <p className="text-sm">
       Latest Updated : <span className={'font-semibold'}>{displayText}</span>
     </p>
   );
@@ -44,9 +36,11 @@ const DDay = ({ baseDate }: DDayProps) => {
 export default function Introduce() {
 
   return (
-    <section className="mb-12 pt-8">
-      <h2 className="text-2xl font-bold text-blue-500 mb-6">INTRODUCE</h2>
-      <div className="space-y-4 text-gray-700 dark:text-gray-300">
+    <section className="portfolio-section">
+      <div className="section-heading">
+        <h2 className="section-title">Introduce</h2>
+      </div>
+      <div className="readable-copy max-w-3xl space-y-5">
         <p>
           스타트업 공동 창업과 금융권 실무 경험을 갖춘 백엔드 개발자입니다.
           Java, Spring, Node.js, Oracle, MySQL, AWS 등 다양한 기술 스택을 활용하여 서비스의 확장성과 유지 보수성을 고려한 아키텍처 구성에 집중하고 있으며,
@@ -66,7 +60,7 @@ export default function Introduce() {
           팀과 함께 해결하는 것을 가장 중요한 가치 중 하나로 생각합니다. 앞으로도 주인의식을 바탕으로 팀과 함께 성장하는 백엔드 엔지니어가 되고자 합니다.
         </p>
       </div>
-      <div className="text-right mt-4 text-sm text-gray-500 dark:text-gray-400">
+      <div className="mt-8 text-right text-sm text-muted-foreground">
         <DDay baseDate='2025.05.20' />
         <p className="font-signature text-xl">ChanKim</p>
       </div>

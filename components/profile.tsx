@@ -1,75 +1,60 @@
 import Image from "next/image";
-import {Bell, Facebook, Github, Globe, Mail, Rss} from "lucide-react";
+import {Github, Globe, Mail} from "lucide-react";
 
 export default function Profile() {
   return (
-    <div className="flex flex-col md:flex-row gap-8 items-center md:items-start mb-12">
-      <div className="w-64 h-64 relative rounded-md overflow-hidden">
+    <section className="grid gap-8 pb-12 pt-4 md:grid-cols-[13rem_1fr] md:items-end md:pt-8">
+      <div className="relative mx-auto aspect-square w-44 overflow-hidden rounded-sm border border-border bg-card shadow-sm md:mx-0 md:w-52">
         <Image
           src="/profile.jpg"
           alt="프로필 이미지"
-          width={256}
-          height={256}
-          className="object-fill"
+          fill
+          sizes="(min-width: 768px) 208px, 176px"
+          className="object-cover"
           priority
         />
       </div>
 
-      <div className="flex-1">
-        <h1 className="text-4xl font-bold text-blue-500 text-center md:text-left mb-6">김 찬</h1>
+      <div className="min-w-0">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">Portfolio</p>
+        <h1 className="mb-5 text-center text-5xl font-bold leading-tight text-foreground md:text-left">김찬</h1>
+        <p className="mb-8 max-w-2xl text-center text-base leading-8 text-foreground/70 md:text-left">
+          금융권 운영 경험과 스타트업 제품 개발 경험을 바탕으로, 문제를 구조화하고 안정적으로 구현하는 개발자입니다.
+        </p>
 
-        <div className="space-y-3">
-          <h2 className="text-xl font-bold text-blue-500">Contact.</h2>
-          <div className="flex items-center gap-3 ml-4">
-            <Mail className="w-5 h-5 text-blue-500" />
+        <div className="grid gap-3 text-sm text-foreground/75 sm:grid-cols-2">
+          <div className="flex min-w-0 items-center gap-3">
+            <Mail className="h-4 w-4 flex-shrink-0 text-primary" />
             <a href="mailto:bitnalchan92@gmail.com" className="hover:text-blue-500">
               bitnalchan92@gmail.com
             </a>
           </div>
 
-          <h2 className="text-xl font-bold text-blue-500">Channel.</h2>
-          <div className="flex items-center gap-3 ml-4">
-            <Globe className="w-5 h-5 text-blue-500" />
+          <div className="flex min-w-0 items-center gap-3">
+            <Globe className="h-4 w-4 flex-shrink-0 text-primary" />
             <a
               href="https://bitnalchan92.github.io"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-blue-500"
+              className="truncate hover:text-primary"
             >
-              https://bitnalchan92.github.io
+              bitnalchan92.github.io
             </a>
           </div>
 
-          <div className="flex items-center gap-3 ml-4">
-            <Github className="w-5 h-5 text-blue-500" />
+          <div className="flex min-w-0 items-center gap-3 sm:col-span-2">
+            <Github className="h-4 w-4 flex-shrink-0 text-primary" />
             <a
               href="https://github.com/bitnalchan92"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-blue-500"
+              className="truncate hover:text-primary"
             >
-              https://github.com/bitnalchan92
+              github.com/bitnalchan92
             </a>
           </div>
-
-          {/*<div className="flex items-center gap-3">*/}
-          {/*  <Rss className="w-5 h-5 text-blue-500" />*/}
-          {/*  <a*/}
-          {/*    href="https://blog.yourdomain.com"*/}
-          {/*    target="_blank"*/}
-          {/*    rel="noopener noreferrer"*/}
-          {/*    className="hover:text-blue-500"*/}
-          {/*  >*/}
-          {/*    https://blog.yourdomain.com*/}
-          {/*  </a>*/}
-          {/*</div>*/}
         </div>
-
-        {/*<Alert className="mt-6 bg-gray-100 dark:bg-gray-800">*/}
-        {/*  <Bell className="h-4 w-4" />*/}
-        {/*  <AlertDescription>현재 구직중이며 백엔드 개발자 포지션에 관심이 있습니다.</AlertDescription>*/}
-        {/*</Alert>*/}
       </div>
-    </div>
+    </section>
   )
 }
