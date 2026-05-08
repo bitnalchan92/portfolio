@@ -13,6 +13,7 @@ type BlogPost = {
 
 const BLOG_FEED_URL = "https://bitnalchan92.github.io/feed.xml"
 const BLOG_URL = "https://bitnalchan92.github.io"
+const RECENT_BLOG_POST_LIMIT = 10
 
 function getText(entry: Element, selector: string) {
   return entry.querySelector(selector)?.textContent?.trim() ?? ""
@@ -38,7 +39,7 @@ function parseFeed(xml: string) {
   const document = new DOMParser().parseFromString(xml, "application/xml")
   const entries = Array.from(document.querySelectorAll("entry"))
 
-  return entries.slice(0, 5).map((entry) => ({
+  return entries.slice(0, RECENT_BLOG_POST_LIMIT).map((entry) => ({
     title: decodeHtml(getText(entry, "title")),
     url: entry.querySelector("link[rel='alternate']")?.getAttribute("href") ?? BLOG_URL,
     summary: decodeHtml(getText(entry, "summary")),
